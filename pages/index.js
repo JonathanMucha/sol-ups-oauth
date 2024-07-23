@@ -8,6 +8,7 @@ export default function Home() {
     async function fetchData() {
       const response = await fetch("/api/getCarrierAccountInfo");
       const data = await response.json();
+      console.log(data)
       setCarrierAccounts(data);
     }
     fetchData();

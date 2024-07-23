@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       return { ...userAccount, ...shippoAccount };
     });
 
-    // console.log(enrichedData);
+    console.log(enrichedData);
 
     //
     res.status(200).json(enrichedData);

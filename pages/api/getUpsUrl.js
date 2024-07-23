@@ -3,7 +3,6 @@ import axios from "axios";
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { accountId, state } = req.body;
-    console.log("get jwt state", state);
     try {
       // Get the redirect URL from the Shippo API
       const shippoResponse = await axios.get(
@@ -27,7 +26,7 @@ export default async function handler(req, res) {
     } catch (error) {
       res
         .status(500)
-        .json({ error: `Failed to get JWT or redirect URL ${error}` });
+        .json({ error: `redirect URL ${error}` });
     }
   } else {
     res.status(405).json({ error: "Method not allowed" });

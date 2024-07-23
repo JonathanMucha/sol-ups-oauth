@@ -26,10 +26,10 @@ export default function UpsLink(props) {
     e.preventDefault();
     try {
       const state = uuidv4().replace(/-/g, '');
-      console.log('state', state)
+      // console.log('state', state)
       sessionStorage.setItem("oauth_state", state);
-      console.log("session state", sessionStorage.getItem("oauth_state"));
-      const response = await axios.post("/api/getJwt", {
+      // console.log("session state", sessionStorage.getItem("oauth_state"));
+      const response = await axios.post("/api/getUpsUrl", {
         accountId: accountId,
         state: state,
       });
