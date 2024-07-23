@@ -32,6 +32,17 @@ cd sol-ups-oauth
 npm install
 ```
 
+### Environment Variables
+
+Create a `.env` file in the root of the project with the following variables:
+
+```bash
+API_KEY=<YOUR_SHIPPO_API_KEY>
+DATA_FILE=carrier_accounts.json # Data file provided by Shippo
+NEXT_PUBLIC_BASE_URL=<YOUR_HOSTING_URL>:3000
+NEXT_PUBLIC_REDIRECT_URL=<YOUR_HOSTING_URL>/thankyou
+```
+
 ### Request Data
 
 You will need a json file containing the relavant UPS account information. It should look like this:
@@ -40,7 +51,7 @@ You will need a json file containing the relavant UPS account information. It sh
 [
   {
     "shippo_object_id": "43dfec5c8wsdf42fd9b4596289688a10a",
-    "usernames": ["<UPS Username 1>", "<UPS Username 2>", ...]",
+    "usernames": ["<UPS Username 1>", "<UPS Username 2>", ...],
     "account_number": "111111"
   },
   ...,
